@@ -35,3 +35,19 @@ cd demo-promloki
     1. Grafana: `kubectl port-forward -n monitoring service/grafana 3000:80` and open your browser and go to http://localhost:3000. Log in with the default credentials (username `admin`, password displayed via bootstrap script).
     2. Prometheus: `kubectl port-forward -n monitoring service/prometheus-kube-prometheus-stack-prometheus 9090:9090` and open your browser and go to http://localhost:9090.
     3. Loki: `kubectl port-forward -n monitoring service/loki-stack-grafana 3300:80` and open your browser and go to http://localhost:3300. Log in with the default credentials (username `admin`, password displayed via bootstrap script).
+
+## Configuration
+
+The configuration files for Prometheus, Loki and Grafana are stored in the `config` directory. You can modify these files to customize the services.
+
+## Troubleshooting
+
+If you encounter any issues with the deployment, you can check the logs of the services using the `kubectl logs` command.
+
+## Contributing
+
+If you would like to contribute to this repository, please fork the repository and submit a pull request.
+
+## License
+
+This repository is licensed under the [MIT License](LICENSE).
