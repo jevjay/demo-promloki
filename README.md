@@ -36,6 +36,15 @@ cd demo-promloki
     2. Prometheus: `kubectl port-forward -n monitoring service/prometheus-kube-prometheus-stack-prometheus 9090:9090` and open your browser and go to http://localhost:9090.
     3. Loki: `kubectl port-forward -n monitoring service/loki-stack-grafana 3300:80` and open your browser and go to http://localhost:3300. Log in with the default credentials (username `admin`, password displayed via bootstrap script).
 
+### Supporting resources
+
+This repository comes with the Terraform configuration of following underlying components which can assist you with the demo:
+
+1. [Devstack](https://docs.openstack.org/devstack/latest/) deployments in GCP
+2. Openstack deployment of an example instance with [prometheus-node-exporter](https://github.com/prometheus/node_exporter) - useful for presenting Prometheus node autodiscovery
+
+_Note: All configurations for the resources above stored within [terraform](./terraform/) directory_
+
 ## Configuration
 
 The configuration files for Prometheus, Loki and Grafana are stored in the `config` directory. You can modify these files to customize the services.
