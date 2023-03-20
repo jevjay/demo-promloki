@@ -27,7 +27,7 @@ GRAFANA_ADMIN_PASSWORD=$(kubectl get secret --namespace monitoring prometheus-gr
 echo "Grafana admin password: $GRAFANA_ADMIN_PASSWORD"
 
 # Get grafana pod name
-GRAFANA_POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=prometheus" -o jsonpath="{.items[0].metadata.name}")
+#GRAFANA_POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/name=grafana,app.kubernetes.io/instance=prometheus" -o jsonpath="{.items[0].metadata.name}")
 
 # Port forward to grafana dashboard
-kubectl --namespace monitoring port-forward $GRAFANA_POD_NAME 3000
+#kubectl --namespace monitoring port-forward $GRAFANA_POD_NAME 3000
