@@ -67,6 +67,20 @@ resource "google_compute_firewall" "http_server" {
   target_tags   = local.tags
 }
 
+resource "google_compute_firewall" "grafana_server" {
+  name    = "${local.prefix}-grafana-allow"
+  network = google_compute_network.vpc.name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["3000"]
+  }
+
+  // Allow traffic from terraform executed environment + any additional ip ranges
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = local.tags
+}
+
 resource "google_compute_firewall" "ssh_server" {
   name    = "${local.prefix}-ssh-allow"
   network = google_compute_network.vpc.name
