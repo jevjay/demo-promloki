@@ -67,23 +67,6 @@ resource "google_compute_firewall" "http_server" {
   target_tags   = local.tags
 }
 
-resource "google_compute_firewall" "v3api_server" {
-  name    = "${local.prefix}-v3api-allow"
-  network = google_compute_network.vpc.name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["5000"]
-  }
-
-  // Allow traffic from terraform executed environment + any additional ip ranges
-  source_ranges = concat(
-    var.http_access_source_ips,
-    ["${chomp(data.http.myip.response_body)}/32"]
-  )
-  target_tags = local.tags
-}
-
 resource "google_compute_firewall" "ssh_server" {
   name    = "${local.prefix}-ssh-allow"
   network = google_compute_network.vpc.name
