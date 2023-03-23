@@ -1,9 +1,3 @@
 prometheus-node-exporter:
   hostRootFsMount:
     enabled: false
-
-grafana:
-  service:
-    type: NodePort
-    port: 300
-    targetPort: 3000
