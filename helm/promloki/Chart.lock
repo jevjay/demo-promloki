@@ -1,0 +1,21 @@
+dependencies:
+- name: operator
+  repository: https://operator.min.io/
+  version: 5.0.1
+- name: tenant
+  repository: https://operator.min.io/
+  version: 5.0.1
+- name: kube-prometheus-stack
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 45.8.1
+- name: thanos
+  repository: https://charts.bitnami.com/bitnami
+  version: 12.4.0
+- name: loki-stack
+  repository: https://grafana.github.io/helm-charts
+  version: 2.9.9
+- name: grafana-operator
+  repository: oci://ghcr.io/grafana-operator/helm-charts
+  version: v5.0.0-rc0
+digest: sha256:ed83516a4523596b9f0c6b7b0756e124bc932a675a7635b5b946166011295689
+generated: "2023-03-31T19:37:08.233604+02:00"
